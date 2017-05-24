@@ -1,0 +1,19 @@
+{
+  "name": "coworking",
+  "version": "1.0.0",
+  "description": "* [Felipe Silva](https://github.com/FelipeArnaldoBodyA)\r * [Igor Oliveira]()",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GilvanHenrique/coworking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GilvanHenrique/coworking/issues"
+  },
+  "homepage": "https://github.com/GilvanHenrique/coworking#readme"
+}

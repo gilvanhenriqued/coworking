@@ -4,4 +4,4 @@
 
 ## Equipe
 [Felipe Silva](https://github.com/FelipeArnaldoBodyA)
-[Igor Oliveira]()
+[Igoor Oliveira]()

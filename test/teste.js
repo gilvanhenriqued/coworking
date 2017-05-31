@@ -9,10 +9,12 @@ chai.use(chaiHttp);
 
   describe('Users', ()=>{
     describe('/GET user', ()=>{
-      chai.request(server)
-      .get('/api/user')
-      .end((err, res)=>{
-
+      it('should save without error', ()=>{
+        chai.request(server)
+        .get('/api/user')
+        .end((err, res)=>{
+          done()
+        })
       })
     })
   })

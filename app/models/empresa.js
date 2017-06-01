@@ -1,4 +1,4 @@
-var schema = new schema ({
+var empresa = new schema ({
   type: object,
   properties: {
     cnpj: {type: Number}

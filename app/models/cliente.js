@@ -1,4 +1,4 @@
-var schema = new schema ({
+var cliente = new schema ({
   type: object,
   properties: {
     cpf: {type: Number},

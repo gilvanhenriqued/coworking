@@ -1,0 +1,2 @@
+var boleto = new Schema ({
+})

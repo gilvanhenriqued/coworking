@@ -6,4 +6,5 @@ routes.get('/user', function(req, res){
   res.json({msg: "funcionou!"})
 })
 
-module.exports = routes
+
+module.exports = routes;

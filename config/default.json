@@ -1,3 +1,4 @@
 {
-"ambiente": "Executando ambiente de desenvolvimento padrão!"
+"ambiente": "Executando ambiente de desenvolvimento padrão!",
+"database": "mongodb://coworkingdb:123456@localhost:27017/admin" 
 }

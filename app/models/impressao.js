@@ -3,13 +3,10 @@ var mongoose = require('mongoose'),
 		ObjectId = Schema.ObjectId;
 
 var impressao = new Schema ({
-  type: object,
-  properties: {
     codServico {type: Number},
     date {type: Date},
     custo {type: Number},
     quantPag {type: Number, min: 1}
-  }
 })
 
 module.exports = mongoose.model('Impressao', impressao);

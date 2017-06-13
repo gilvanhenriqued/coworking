@@ -3,17 +3,14 @@ var mongoose = require('mongoose'),
 		ObjectId = Schema.ObjectId;
 
 var empresa = new schema ({
-  type: object,
-  properties: {
     codUser: {type: Number},
-    cnpj: {type: Number},
+    cnpj: {type: String},
     name: { type: String },
     endereco: {type: String},
     email: {type: String},
     senha: {type: String},
     dataFundacao: {type: Date},
     tipoCliente: {type: String}
-  }
 })
 
 module.exports = mongoose.model('Empresa', empresa);

@@ -6,7 +6,7 @@ var cliente = new Schema ({
     codUser: {type: Number},
     cpf: {type: String},
     genero: {type: String},
-    name: { type: String },
+    nome: { type: String },
     endereco: {type: String},
     email: {type: String},
     senha: {type: String},

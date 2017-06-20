@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 var empresa = new schema ({
     codUser: {type: Number},
     cnpj: {type: String},
-    name: { type: String },
+    nome: { type: String },
     endereco: {type: String},
     email: {type: String},
     senha: {type: String},

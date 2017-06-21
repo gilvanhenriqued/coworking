@@ -36,22 +36,7 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 
 app.get('/', function(req, res) {
-    res.send('Hello! The API is at http://localhost:' + port + '/api');
-});
-
-app.get('/setup', function(req, res) {
-  // create a sample user
-  // var nick = new User({
-  //   nome: 'Igor',
-  //   senha: 'password'
-  // });
-  // save the sample user
-  nick.save(function(err) {
-    if (err) throw err;
-
-    console.log('User saved successfully');
-    res.json({ success: true });
-  });
+    res.send('Hello! The Coworking is at http://localhost:' + port + '/api');
 });
 
 module.exports = server;

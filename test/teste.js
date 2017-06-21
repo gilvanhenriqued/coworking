@@ -8,6 +8,7 @@ let should = chai.should();
 chai.use(chaiHttp);
 
   // teste para autenticação de usuario
+
   describe('/POST user', () => {
         it('it should authenticate without errors', (done) => {
           let user = {

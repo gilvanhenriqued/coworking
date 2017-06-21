@@ -3,7 +3,6 @@ var mongoose = require('mongoose'),
 		ObjectId = Schema.ObjectId;
 
 var empresa = new Schema ({
-    codUser: {type: Number},
     cnpj: {type: String},
     nome: { type: String },
     endereco: {type: String},

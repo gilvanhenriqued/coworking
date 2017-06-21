@@ -7,7 +7,7 @@ var express = require('express'),
     routes = express.Router()
 
 
-    // route de autenticação de usuarios (POST http://localhost:8080/api/authenticate)
+    // route de autenticação de usuarios (POST http://localhost:3000/api/authenticate)
     routes.post('/authenticate', function(req, res) {
 
       User.findOne({
@@ -40,7 +40,6 @@ var express = require('express'),
 
     // route middleware para verificar o token
     routes.use(function(req, res, next) {
-
       // obtendo o token
       var token = req.body.token || req.query.token || req.headers['x-access-token'];
 
@@ -67,7 +66,7 @@ var express = require('express'),
       }
     });
 
-    // route para mostrar uma mensagem inicial (GET http://localhost:8080/api/)
+    // route para mostrar uma mensagem inicial (GET http://localhost:3000/api/)
     routes.get('/', function(req, res) {
       res.json({ message: 'Bem vindo ao Coworking :D !' });
     });

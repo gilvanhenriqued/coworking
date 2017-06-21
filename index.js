@@ -41,10 +41,10 @@ app.get('/', function(req, res) {
 
 app.get('/setup', function(req, res) {
   // create a sample user
-  var nick = new User({
-    nome: 'Igor',
-    senha: 'password'
-  });
+  // var nick = new User({
+  //   nome: 'Igor',
+  //   senha: 'password'
+  // });
   // save the sample user
   nick.save(function(err) {
     if (err) throw err;

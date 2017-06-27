@@ -10,7 +10,7 @@ routes.get('/users', function(req, res) {
   });
 });
 
-// route para retornar todos os usuarios(GET http://localhost:3000/api/users/:id)
+// route para retornar um usuário por ID (GET http://localhost:3000/api/users/:id)
 routes.get('/users/:id', (req, res) => {
   User.findById(req.params.id).select('_id nome email endereco tipoCliente').exec().then(
     user => {

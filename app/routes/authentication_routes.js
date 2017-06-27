@@ -19,7 +19,7 @@ var express = require('express'),
           res.json({ success: false, message: 'Falha na autenticação. Usuário não encontrado.' });
         } else if (user) {
           // check if password matches
-          if (user.password != req.body.password) {
+          if (user.senha != req.body.senha) {
             res.json({ success: false, message: 'Falha na autenticação. Senha incorreta.' });
           } else {
             // if user is found and password is right

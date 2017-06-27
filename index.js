@@ -4,7 +4,6 @@ var app = express()
 var config = require('config')
 var morgan = require('morgan');
 var mongoose = require('mongoose');
-var User = require('./app/models/cliente');
 var router = express.Router()
 
 mongoose.Promise = global.Promise;
@@ -12,8 +11,8 @@ mongoose.Promise = global.Promise;
 app.use(bodyParser.json())
 
 app.set('superSecret', config.secret); // secret variable
-router.use(require('./app/routes/user_routes'))
 router.use(require('./app/routes/authentication_routes'))
+router.use(require('./app/routes/user_routes'))
 app.use('/api', router)
 
 var server = app.listen(3000, function(){
@@ -22,7 +21,6 @@ var server = app.listen(3000, function(){
 })
 
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
-var User = require('./app/models/cliente'); // get our mongoose model
 
 // configuration =========
 var port = process.env.PORT || 3000; // used to create, sign, and verify tokens

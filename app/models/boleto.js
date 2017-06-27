@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
 		ObjectId = Schema.ObjectId;
 
 var boleto = new Schema ({
-    codServico {type: Number},
+    codBoleto {type: Number},
     date {type: Date},
     custo {type: Number},
     codBarra {type: Number}

@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
 		ObjectId = Schema.ObjectId;
 
 var reserva = new Schema({
+		tipoServico {type: String},
     codServico {type: Number},
     date {type: Date},
     custo {type: Number},

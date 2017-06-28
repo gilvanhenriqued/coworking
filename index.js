@@ -13,7 +13,10 @@ app.use(bodyParser.json())
 app.set('superSecret', config.secret); // secret variable
 router.use(require('./app/routes/authentication_routes'))
 router.use(require('./app/routes/user_routes'))
+app.use(express.static(__dirname + '/public'))
+app.use('/scripts', express.static(__dirname + '/node_modules/'));
 app.use('/api', router)
+
 
 var server = app.listen(3000, function(){
   console.log('Example app listening on port 3000!')
@@ -38,13 +41,3 @@ app.get('/', function(req, res) {
 });
 
 module.exports = server;
-
-/*
-  Code for commited
-   git add --ignore-removal .
-   git commit -m "Mensagem de commit qualquer"
-   git push origin master
-
-  Code for clone of alterations
-   git pull
-*/

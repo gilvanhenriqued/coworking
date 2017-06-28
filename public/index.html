@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="coworking">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="/scripts/angular/angular.min.js"></script>
+    <script src="/scripts/angular-route/angular-route.min.js"></script>
+    <script src="app/app.module.js"></script>
+    <script src="app/components/apiService.js"></script>
+    <script src="app/components/main/mainCtrl.js"></script>
+    <script src="app/components/tickets/ticketCtrl.js"></script>
+    <script src="app/components/authentications/authenticationCtrl.js"></script>
+    <script src="app/components/users/userCtrl.js"></script>
+  </head>
+  <body ng-controller="MainCtrl as c">
+
+    <div ng-view></div>
+  </body>
+</html>

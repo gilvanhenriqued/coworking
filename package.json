@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/GilvanHenrique/coworking#readme",
   "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
     "body-parser": "^1.17.2",
     "config": "^1.26.1",
     "cookie-parser": "^1.4.3",

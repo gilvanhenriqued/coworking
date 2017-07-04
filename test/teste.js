@@ -6,7 +6,18 @@ let server = require('../index');
 let should = chai.should();
 
 chai.use(chaiHttp);
-
+// teste de cadastro do usuário
+  describe('Users', ()=>{
+    describe('/GET user', ()=>{
+      it('should save without error', ()=>{
+        chai.request(server)
+        .get('/api/user')
+        .end((err, res)=>{
+          done()
+        })
+      })
+    })
+  })
   // teste para autenticação de usuario
 
   describe('/POST user', () => {

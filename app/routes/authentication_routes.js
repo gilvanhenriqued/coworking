@@ -11,7 +11,7 @@ var express = require('express'),
     routes.post('/authenticate', function(req, res) {
 
       User.findOne({
-        nome: req.body.nome
+        email: req.body.email
       }, function(err, user) {
             if (err) throw err;
         if (!user) {

@@ -21,6 +21,10 @@ angular.module("coworking", ['ngRoute'])
       .when('/home', {
 				templateUrl : 'app/routes/home.html'
 			})
+      // pagina de cadastro
+			.when('/cadastro', {
+				templateUrl : 'app/routes/cadastro.html'
+			})
 			.otherwise({
 				redirectTo: '/home'
 			});

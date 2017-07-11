@@ -5,7 +5,7 @@ var routes = express.Router()
 
 // route para retornar todos os serviços(GET http://localhost:3000/api/services)
 routes.get('/services', function(req, res) {
-  Service.find({}, function(erro, users) {
+  Service.find({}, function(erro, services) {
     res.json(services);
   });
 });
@@ -28,7 +28,6 @@ routes.get('/services/:id', (req, res) => {
 routes.post('/service', (req, res) => {
   var service = new Service ({
     tipoServico: req.body.tipoServico,
-    codServico: req.body.codServico,
     date: req.body.date,
     custo: req.body.custo
   })

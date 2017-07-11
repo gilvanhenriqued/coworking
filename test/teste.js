@@ -19,7 +19,6 @@ chai.use(chaiHttp);
     })
   })
   // teste para autenticação de usuario
-
   describe('/POST user', () => {
         it('it should authenticate without errors', (done) => {
           let user = {
@@ -64,4 +63,53 @@ chai.use(chaiHttp);
               });
         });
       });
-  //-------------------------------------------------------------------------------------------//
+  // teste das rotas de serviços
+    describe('/GET services',() => {
+      beforeEach((done) => { //Before each test we empty the database
+    services.remove({}, (err) => {
+       done();
+    });
+});
+      it('It should return without error', (done) => {
+        let services = {
+          tipoServico: "reserva" ,
+          date: 2017/07/11,
+          custo: 10000
+        }
+        let successfulReturn = {
+          tipoServico: "reserva" ,
+          date: 2017/07/11,
+          custo: 10000
+        }
+        let unsuccessfulReturn = {
+          tipoServico: "impressora" ,
+          date: 2011/01/10,
+          custo: 300
+        }
+    chai.request(server)
+        .post('/api/services')
+        .send(services)
+        .end((err, res) => {
+          chai.request(server)
+              .post('/api/services_routes')
+              .send(unsuccessfulReturn)
+              .end((err, res) => {
+                  res.should.have.status(200);
+                  res.body.should.be.a('object');
+                  res.body.should.have.property('success').eql(false);
+                  res.body.should.have.property('message');
+              });
+          chai.request(server)
+              .post('/api/services_routes')
+              .send(successfulReturn)
+              .end((err, res) => {
+                  res.should.have.status(200);
+                  res.body.should.be.a('object');
+                  res.body.should.have.property('success').eql(true);
+                  res.body.should.have.property('token');
+                  res.body.should.have.property('service');
+              });
+          done();
+        });
+  });
+});

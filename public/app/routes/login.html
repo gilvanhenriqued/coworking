@@ -4,60 +4,53 @@
     <meta charset="utf-8">
     <title>Coworking IFPB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/scripts/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/scripts/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/script.js">
-    </script>
-
-    <style>
-        body{
-          margin-top: 70px;
-        }
-    </style>
-
   </head>
+
   <body>
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <!-- Botão para expandir o menu. Aparece quando a largura da tela diminui (Requer JS). -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- O nome, marca, logotipo do nosso projeto -->
-          <a class="navbar-brand" href="#">Coworking Picuí</a>
-        </div>
-      </div>
-    </div>
     <div ng-controller="AuthenticationCtrl as x">
-      <div class="row">
-        <div class="col-md-offset-4 col-md-6">
-          <form>
-            <div class="form-group col-md-6">
-              <label for="email">E-mail</label>
-              <input type="email" class="form-control" ng-model="x.email" id="e05">
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Login </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-offset-3 col-md-12">
+              <form>
+                <div class="form-group col-md-6">
+                  <label for="email">E-mail</label>
+                  <input type="email" class="form-control" ng-model="x.email" id="e05">
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-offset-4 col-md-6">
-          <form>
-            <div class="form-group col-md-6">
-              <label for="senha">Senha</label>
-              <input type="password" class="form-control" ng-model="x.senha" id="s06">
+          </div>
+          <div class="row">
+            <div class="col-md-offset-3 col-md-12">
+              <form>
+                <div class="form-group col-md-6">
+                  <label for="senha">Senha</label>
+                  <input type="password" class="form-control" ng-model="x.senha" id="s06">
+                </div>
+              </form>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-      <div class="col-md-offset-6 col-md-6">
-        <button type="button" class="btn btn-success" ng-click="x.autenticar()"
-        style="margin-left:22px" name="button" id="botao">Entrar</button>
+        <div class="panel-footer text-right">
+          <div class="row">
+            <div class="col-md-3">
+            </div>
+          </div>
+            <button type="button" class="btn btn-primary"
+             name="button" id="esqueciasenha">Esqueci a Senha</button>
+            <button type="button" class="btn btn-success" ng-click="x.autenticar()"
+             name="button" id="login">Entrar</button>
+          </div>
+        </div>
       </div>
     </div>
-    </body>
-  </html>
+  </div>
+    </div>
+  </body>
+</html>

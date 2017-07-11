@@ -1,9 +1,9 @@
-angular.module('coworking').service('apiSvc', ApiService)
+angular.module('coworking').service('authSvc', AuthService)
 
-function ApiService($http) {
+function AuthService($http) {
   var API = "http://localhost:3000/api"
 
-  this.autenticar = function(email, senha){
+  this.login = function(email, senha){
     return $http.post(API + '/authenticate', {
       email: email,
       senha: senha

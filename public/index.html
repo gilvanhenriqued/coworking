@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script type="text/javascript" src="/scripts/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/scripts/bootstrap/dist/js/bootstrap.min.js"></script>
     <link href="/scripts/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
     <script src="/scripts/angular/angular.min.js"></script>
     <script src="/scripts/angular-route/angular-route.min.js"></script>
     <script src="app/app.module.js"></script>
     <script src="app/components/apiService.js"></script>
     <script src="app/components/main/mainCtrl.js"></script>
     <script src="app/components/tickets/ticketCtrl.js"></script>
+    <script src="app/components/authService.js"></script>
     <script src="app/components/authentications/authenticationCtrl.js"></script>
     <script src="app/components/users/userCtrl.js"></script>
   </head>
@@ -24,13 +25,15 @@
   </style>
 
   <body ng-controller="MainCtrl as c">
+
     <!-- Mensagem de alerta de erro no login -->
     <div class="container">
-      <div ng-cloak class="col-md-offset-3 col-md-6" role="alert" ng-show="c.evento">
+      <div ng-cloak ng-class="[x.eventClass]" class="col-md-offset-3 col-md-6" role="alert" ng-show="c.event">
         <div class="alert alert-danger">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times; </span>
           </button>
+          {{c.eventMessage}}
         </div>
       </div>
     </div>
@@ -69,7 +72,7 @@
               <li><a href="#">Membros</a></li>
               <li><a href="#">Contatos</a></li>
               <li ><a href="#">Sair</a></li>
-          </ul>
+          </ul></div></div></div>
 
     <div ng-view></div>
   </body>

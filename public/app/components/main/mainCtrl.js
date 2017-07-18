@@ -14,4 +14,8 @@ $scope.$on('evento', function(erro, args){
   self.eventMessage = args.message;
 })
 
+  function invocaTelaDeCadastro(){
+    $location.path('/cadastro')
+  }
+
 }

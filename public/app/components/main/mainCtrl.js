@@ -1,9 +1,9 @@
 angular.module('coworking').controller('MainCtrl', MainCtrl);
 
-function MainCtrl($scope, apiSvc) {
+function MainCtrl($scope, apiSvc, authSvc) {
 var self = this;
 
-
+self.isAuthed = authSvc.isAuthed;
 
 $scope.$on('evento', function(erro, args){
   self.event = true;

@@ -1,76 +1,77 @@
 <!DOCTYPE html>
 <html ng-app="coworking">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script type="text/javascript" src="/scripts/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="/scripts/bootstrap/dist/js/bootstrap.min.js"></script>
-    <link href="/scripts/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="/scripts/angular/angular.min.js"></script>
-    <script src="/scripts/angular-route/angular-route.min.js"></script>
-    <script src="app/app.module.js"></script>
-    <script src="app/components/apiService.js"></script>
-    <script src="app/components/main/mainCtrl.js"></script>
-    <script src="app/components/tickets/ticketCtrl.js"></script>
-    <script src="app/components/authService.js"></script>
-    <script src="app/components/authentications/authenticationCtrl.js"></script>
-    <script src="app/components/users/userCtrl.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script type="text/javascript" src="/scripts/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link href="/scripts/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/scripts/angular/angular.min.js"></script>
+  <script src="/scripts/angular-route/angular-route.min.js"></script>
+  <script src="app/app.module.js"></script>
+  <script src="app/components/apiService.js"></script>
+  <script src="app/components/main/mainCtrl.js"></script>
+  <script src="app/components/tickets/ticketCtrl.js"></script>
+  <script src="app/components/authService.js"></script>
+  <script src="app/components/authentications/authenticationCtrl.js"></script>
+  <script src="app/components/users/userCtrl.js"></script>
+</head>
 
-  <style>
-      body{
-        margin-top: 70px;
-      }
-  </style>
+<style>
+body{
+  margin-top: 70px;
+}
+</style>
 
-  <body ng-controller="MainCtrl as c">
+<body ng-cloak ng-controller="MainCtrl as c">
 
-    <!-- Mensagem de alerta de erro no login -->
-    <div class="container">
-      <div ng-cloak class="col-md-offset-3 col-md-6" role="alert" ng-show="c.event">
-        <div ng-class="[c.eventClass]" class="alert">
-          <button type="button" class="close" ng-click="c.closeAlert()" aria-label="Close">
-            <span aria-hidden="true">&times; </span>
-          </button>
-          {{c.eventMessage}}
-        </div>
+  <!-- Mensagem de alerta de erro no login -->
+  <div class="container">
+    <div ng-cloak class="col-md-offset-3 col-md-6" role="alert" ng-show="c.event">
+      <div ng-class="[c.eventClass]" class="alert">
+        <button type="button" class="close" ng-click="c.closeAlert()" aria-label="Close">
+          <span aria-hidden="true">&times; </span>
+        </button>
+        {{c.eventMessage}}
       </div>
     </div>
+  </div>
 
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <!-- Botão para expandir o menu. Aparece quando a largura da tela diminui (Requer JS). -->
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- O nome, marca, logotipo do nosso projeto -->
-          <a class="navbar-brand" href="#">Coworking</a>
-        </div>
-        <!-- Os itens de menu -->
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Início</a></li>
-              <li ><a href="#">Entrar</a></li>
-              <li><a href="#" ng-click="c.invocaTelaDeCadastro()">Cadastro</a></li>
-              <li class="dropdown">
-           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Serviços <span class="caret"></span></a>
-           <ul class="dropdown-menu">
-             <li><a href="#">Reserva</a></li>
-             <li><a href="#">Reunião</a></li>
-             <li><a href="#">Impressão</a></li>
-             <li role="separator" class="divider"></li>
-             <li><a href="#">Pagamentos</a></li>
-           </ul>
-         </li>
-              <li><a href="#">Membros</a></li>
-              <li><a href="#">Contatos</a></li>
-              <li ><a href="#" class="pull-right">Sair</a></li>
-          </ul></div></div></div>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- Botão para expandir o menu. Aparece quando a largura da tela diminui (Requer JS). -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- O nome, marca, logotipo do nosso projeto -->
+        <a class="navbar-brand" href="#">Coworking</a>
+      </div>
+      <!-- Os itens de menu -->
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Início</a></li>
+          <li ><a href="#!/login">Entrar</a></li>
+          <li><a href="#!/cadastro">Cadastro</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Serviços <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#!/reserva">Reserva</a></li>
+              <li><a href="#!/reuniao">Reunião</a></li>
+              <li><a href="#!/impressao">Impressão</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#!/tickets">Pagamentos</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Membros</a></li>
+          <li><a href="#">Contatos</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right"><li class="glyphicon glyphicon-off">
+          <a href="#"></a></li></ul></div></div></div>
 
-    <div ng-view></div>
-  </body>
-</html>
+          <div ng-view></div>
+        </body>
+        </html>

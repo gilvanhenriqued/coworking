@@ -6,7 +6,6 @@
     <script type="text/javascript" src="/scripts/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/scripts/bootstrap/dist/js/bootstrap.min.js"></script>
     <link href="/scripts/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script type="text/javascript" src="js/scripts.js"></script>
     <script src="/scripts/angular/angular.min.js"></script>
     <script src="/scripts/angular-route/angular-route.min.js"></script>
     <script src="app/app.module.js"></script>
@@ -28,9 +27,9 @@
 
     <!-- Mensagem de alerta de erro no login -->
     <div class="container">
-      <div ng-cloak ng-class="[x.eventClass]" class="col-md-offset-3 col-md-6" role="alert" ng-show="c.event">
-        <div class="alert alert-danger">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <div ng-cloak class="col-md-offset-3 col-md-6" role="alert" ng-show="c.event">
+        <div ng-class="[c.eventClass]" class="alert">
+          <button type="button" class="close" ng-click="c.closeAlert()" aria-label="Close">
             <span aria-hidden="true">&times; </span>
           </button>
           {{c.eventMessage}}
@@ -56,22 +55,20 @@
           <ul class="nav navbar-nav">
               <li class="active"><a href="#">Início</a></li>
               <li ><a href="#">Entrar</a></li>
-              <li><a href="#" ng-click = "c.invocaTelaDeCadastro()">Cadastro</a></li>
+              <li><a href="#" ng-click="c.invocaTelaDeCadastro()">Cadastro</a></li>
               <li class="dropdown">
-           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Serviços <span class="caret"></span></a>
+           <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Serviços <span class="caret"></span></a>
            <ul class="dropdown-menu">
-             <li><a href="#">Action</a></li>
-             <li><a href="#">Another action</a></li>
-             <li><a href="#">Something else here</a></li>
+             <li><a href="#">Reserva</a></li>
+             <li><a href="#">Reunião</a></li>
+             <li><a href="#">Impressão</a></li>
              <li role="separator" class="divider"></li>
-             <li><a href="#">Separated link</a></li>
-             <li role="separator" class="divider"></li>
-             <li><a href="#">One more separated link</a></li>
+             <li><a href="#">Pagamentos</a></li>
            </ul>
          </li>
               <li><a href="#">Membros</a></li>
               <li><a href="#">Contatos</a></li>
-              <li ><a href="#">Sair</a></li>
+              <li ><a href="#" class="pull-right">Sair</a></li>
           </ul></div></div></div>
 
     <div ng-view></div>

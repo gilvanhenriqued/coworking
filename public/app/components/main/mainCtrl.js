@@ -15,4 +15,8 @@ $scope.$on('evento', function(erro, args){
   self.eventMessage = args.message;
 })
 
+self.closeAlert = function(){
+    self.event = false;
+}
+
 }

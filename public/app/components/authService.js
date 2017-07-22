@@ -34,4 +34,8 @@ function AuthService($http, $window) {
   self.getToken = function() {
     $window.localStorage['jwtToken'];
   }
+
+  self.logout = function() {
+    $window.localStorage.removeItem('jwtToken');
+  }
 }

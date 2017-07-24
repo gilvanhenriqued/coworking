@@ -1,10 +1,6 @@
 angular.module("coworking", ['ngRoute'])
 	.config(function($routeProvider) {
 		$routeProvider
-			 // visualizar dados do usuario
-			.when('/user', {
-				templateUrl : 'app/routes/user.html'
-			})
 			// visualizar servicos
 			.when('/services', {
 				templateUrl : 'app/routes/services.html'

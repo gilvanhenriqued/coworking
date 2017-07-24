@@ -38,6 +38,10 @@ angular.module("coworking", ['ngRoute'])
 				templateUrl : 'app/routes/reuniao.html'
 			})
 
+			.when('/cadastro2', {
+				templateUrl : 'app/routes/cadastro2.html'
+			})
+
 			.otherwise({
 				redirectTo: '/home'
 			});

@@ -6,12 +6,21 @@ var self = this;
   self.senha = "";
   self.erro = false;
 
+  self.handleRequest = function(res) {
+    var token = res.data ? res.data.token : null;
+    if(token){
+      console.log(token);
+      authSvc.saveToken(token);
+      $location.path('/home');
+    }
+  }
+
   self.autenticar = function(){
     authSvc.login(self.email, self.senha).then(function(res){
         if(res.data.success){
           console.log(res.data);
           console.log('Logado com sucesso!');
-          $location.path('/home');
+          self.handleRequest(res);
         }else{
           console.log(res.data);
           $scope.data = res.data;

@@ -22,7 +22,7 @@ self.dataNascimento = "";
           console.log(res.data);
           $scope.data = res.data;
           $rootScope.$broadcast('evento', {alerta: "erro",
-          message: "Erro! O formulário de cadastro está incompleto ouS errado"})
+          message: "Erro! O formulário de cadastro está incompleto ou errado"})
         }
       })
   }
@@ -41,6 +41,12 @@ $scope.$on('evento', function(erro, args){
 
 self.closeAlert = function(){
     self.event = false;
+}
+
+self.sair = function() {
+  authSvc.logout();
+  $location.path('/login');
+
 }
 
 }

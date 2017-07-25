@@ -1,6 +1,6 @@
 angular.module('coworking').service('authSvc', AuthService)
 
-function AuthService($http, $window) {
+function AuthService($http, $window, $location) {
   var API = "http://localhost:3000/api"
   var self = this;
 
@@ -11,7 +11,7 @@ function AuthService($http, $window) {
     })
   }
 
-  self.parseJwt = function() {
+  self.parseJwt = function(token) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace('-', '+').replace('_', '/');
     return JSON.parse($window.atob(base64));
@@ -27,12 +27,20 @@ function AuthService($http, $window) {
     }
   }
 
-  self.saveToken = function() {
+  self.getUid = function() {
+	  var token = self.getToken();
+	  if(token) {
+	    var params = self.parseJwt(token);
+	    return params.uid;
+	  }
+	}
+
+  self.saveToken = function(token) {
     $window.localStorage['jwtToken'] = token;
   }
 
   self.getToken = function() {
-    $window.localStorage['jwtToken'];
+    return $window.localStorage['jwtToken'];
   }
 
   self.logout = function() {

@@ -73,8 +73,11 @@ body{
         <li><a href="#">Membros</a></li>
         <li><a href="#">Contatos</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right"><li>
-        <a href="#">Sair</a></li></ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li ng-show="c.isAuthed()" ng-click="c.sair()">
+          <a hre>Sair</a>
+        </li>
+      </ul>
       </div>
     </div>
   </div>

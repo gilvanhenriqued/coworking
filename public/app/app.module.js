@@ -1,10 +1,6 @@
 angular.module("coworking", ['ngRoute'])
 	.config(function($routeProvider) {
 		$routeProvider
-			 // visualizar dados do usuario
-			.when('/user', {
-				templateUrl : 'app/routes/user.html'
-			})
 			// visualizar servicos
 			.when('/services', {
 				templateUrl : 'app/routes/services.html'
@@ -36,6 +32,10 @@ angular.module("coworking", ['ngRoute'])
 
 			.when('/reuniao', {
 				templateUrl : 'app/routes/reuniao.html'
+			})
+
+			.when('/cadastro2', {
+				templateUrl : 'app/routes/cadastro2.html'
 			})
 
 			.otherwise({

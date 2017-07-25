@@ -7,6 +7,46 @@ var express = require('express'),
     routes = express.Router()
 
 
+    // route para cadastrar um novo usuario (POST http://localhost:3000/api/users)
+    routes.post('/users', (req, res) => {
+      var user = new User ({
+        nome: req.body.nome,
+        endereco: req.body.endereco,
+        email: req.body.email,
+        senha: req.body.senha,
+        tipoCliente: req.body.tipoCliente
+      })
+
+      if (user.tipoCliente == 'cliente'){
+        user.cpf = req.body.cpf
+        user.genero = req.body.genero
+        user.dataNascimento = req.body.dataNascimento
+      }else if(user.tipoCliente == 'empresa'){
+        user.cnpj = req.body.cnpj
+        user.dataFundacao = req.body.dataFundacao
+      }else{
+        res.json({
+          success: false,
+          message: "Falha ao cadastrar usuário. Tipo de usuário incorreto."
+        })
+      }
+
+      user.save().then(
+         () => {
+           res.json({
+             success: true,
+             result: user
+           })
+         },
+         erro => {
+           res.json({
+             success: false,
+             details: erro,
+             result: user
+           })
+         })
+    })
+
     // route de autenticação de usuarios (POST http://localhost:3000/api/authenticate)
     routes.post('/authenticate', function(req, res) {
 

@@ -17,11 +17,6 @@
   <script src="app/components/users/userCtrl.js"></script>
 </head>
 
-<style>
-body{
-  margin-top: 70px;
-}
-</style>
 
 <body ng-cloak ng-controller="MainCtrl as c">
 
@@ -57,11 +52,17 @@ body{
       <ul class="nav navbar-nav">
         <li><a href="#"  style="color:white">Início</a></li>
         <li ><a href="#!/login"  style="color:white">Entrar</a></li>
-        <li><a href="#!/cadastro"  style="color:white">Cadastro</a></li>
-        <li class="dropdown" ng-show="c.isAuthed()">
+        <li class="dropdown" ng-show="c.isAuthed() == false">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+          aria-haspopup="true" aria-expanded="false" style="color:white">Cadastro <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#!/cadastro">Pessoal</a></li>
+            <li><a href="#!/cadastro2">Empresarial</a></li>
+          </ul>
+        </li>        <li class="dropdown" ng-show="c.isAuthed()">
           <!-- A AUSENCIA DOS SERVIÇOS PARA QUEM NÃO ESTÁ LOGADO DEU CERTO !!! :D :D -->
           <a class="dropdown-toggle" data-toggle="dropdown" role="button"
-          aria-haspopup="true" aria-expanded="false"> Serviços <span class="caret"></span></a>
+          aria-haspopup="true" aria-expanded="false"style="color:white"> Serviços <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#!/reserva">Reserva</a></li>
             <li><a href="#!/reuniao">Reunião</a></li>
@@ -73,23 +74,20 @@ body{
         <li><a href="#"  style="color:white">Membros</a></li>
         <li><a href="#"  style="color:white">Contatos</a></li>
       </ul>
-<<<<<<< HEAD
       <ul class="nav navbar-nav navbar-right">
         <li ng-show="c.isAuthed()" ng-click="c.sair()">
           <a hre>Sair</a>
         </li>
       </ul>
-=======
       <div class="nav navbar-nav navbar-right col-md-offset-3 col-md-6"
       style = "margin-top:8px">
         <form class="form-inline pull-xs-right">
-          <input class="form-control" type="text" placeholder="Search">
-          <button class="btn btn-info" type="submit">Search</button>
+          <input class="form-control" type="text" placeholder="Pesquisar">
+          <button class="btn btn-info glyphicon glyphicon-search" type="submit"></button>
         </form>
       </div>
       <ul class="nav navbar-nav navbar-right"><li ng-show="c.isAuthed()">
         <a href="#">Sair</a></li></ul>
->>>>>>> b9e5b3c644a0a2f91c788e14c9c526c56ec079b6
       </div>
     </div>
   </div>

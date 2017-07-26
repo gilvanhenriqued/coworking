@@ -16,7 +16,7 @@ function ApiService($http) {
     })
   }
 
-  this.cadastrarEmpresa = function(nome, endereco, email, senha, tipoCliente, cpf, genero, dataNascimento){
+  this.cadastrarEmpresa = function(nome, endereco, email, senha, tipoCliente, cnpj, dataFundacao){
     return $http.post(API + '/users', {
       nome: nome,
       endereco: endereco,

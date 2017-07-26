@@ -10,6 +10,8 @@ self.senha = "";
 self.cpf = "";
 self.genero = "";
 self.dataNascimento = "";
+self.cnpj = "";
+self.dataFundacao = "";
 
   self.registrarCliente = function(){
     apiSvc.cadastrarCliente(self.nome, self.endereco, self.email, self.senha, "cliente", self.cpf, self.genero, self.dataNascimento)

@@ -11,11 +11,11 @@ self.cpf = "";
 self.genero = "";
 self.dataNascimento = "";
 
-  self.registrar = function(){
-    apiSvc.cadastrar(self.nome, self.endereco, self.email, self.senha, self.cpf, self.genero, self.dataNascimento)
+  self.registrarCliente = function(){
+    apiSvc.cadastrar(self.nome, self.endereco, self.email, self.senha, "cliente", self.cpf, self.genero, self.dataNascimento)
       .then(function(res){
         if(res.data.success){
-          console.log(res.data);
+          console.log(res.data.result);
           console.log('Cadastro efetuado com sucesso!');
           $location.path('/login');
         }else{
@@ -46,7 +46,6 @@ self.closeAlert = function(){
 self.sair = function() {
   authSvc.logout();
   $location.path('/login');
-
 }
 
 }

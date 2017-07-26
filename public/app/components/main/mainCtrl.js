@@ -12,7 +12,23 @@ self.genero = "";
 self.dataNascimento = "";
 
   self.registrarCliente = function(){
-    apiSvc.cadastrar(self.nome, self.endereco, self.email, self.senha, "cliente", self.cpf, self.genero, self.dataNascimento)
+    apiSvc.cadastrarCliente(self.nome, self.endereco, self.email, self.senha, "cliente", self.cpf, self.genero, self.dataNascimento)
+      .then(function(res){
+        if(res.data.success){
+          console.log(res.data.result);
+          console.log('Cadastro efetuado com sucesso!');
+          $location.path('/login');
+        }else{
+          console.log(res.data);
+          $scope.data = res.data;
+          $rootScope.$broadcast('evento', {alerta: "erro",
+          message: "Erro! O formulário de cadastro está incompleto ou errado"})
+        }
+      })
+  }
+
+  self.registrarEmpresa = function(){
+    apiSvc.cadastrarEmpresa(self.nome, self.endereco, self.email, self.senha, "empresa", self.cnpj, self.dataFundacao)
       .then(function(res){
         if(res.data.success){
           console.log(res.data.result);

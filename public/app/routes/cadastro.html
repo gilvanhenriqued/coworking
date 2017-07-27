@@ -1,7 +1,15 @@
+<style>
+body{
+margin-top: 80px;
+}
+</style>
+
   <div class="row" ng-controller="MainCtrl as x">
     <div class="col-md-offset-3 col-md-6">
       <form>
-        <h2 class="col-md-12">Criar conta</h2>
+        <div class="panel panel-default">
+        <div class="panel-heading" style="font-size:20px">Criar conta</div>
+        <div class="panel-body">
         <div class="form-group col-md-5">
           <label for="name">Nome</label>
           <input type="text" class="form-control" ng-model="x.nome">
@@ -45,3 +53,4 @@
       </form>
     </div>
   </div>
+</div>

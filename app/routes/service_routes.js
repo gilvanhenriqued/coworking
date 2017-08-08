@@ -1,5 +1,6 @@
 var express = require('express')
-var Service = require('../models/cliente');
+var Reserva = require('../models/reserva');
+var Boleto = require('../models/boleto');
 var routes = express.Router()
 
 
@@ -25,17 +26,56 @@ routes.get('/services/:id', (req, res) => {
 })
 
 // route para utilizar um novo serviço (POST http://localhost:3000/api/services)
-routes.post('/service', (req, res) => {
-  var service = new Service ({
-    tipoServico: req.body.tipoServico,
-    date: req.body.date,
-    custo: req.body.custo
-  })
+routes.post('/services', (req, res) => {
+    console.log(req.body.tipoServico)
+  if (req.body.tipoServico == 'reserva'){
+    console.log(req.body.tipoServico)
+    var reserva = new Reserva ({
+      tipoServico: req.body.tipoServico,
+      date: req.body.date,
+      custo: req.body.custo,
+      plano: req.body.plano,
+      tipoReserva: req.body.tipoReserva
+    })
 
-  if (service.tipoServico == 'reserva'){
-    service.plano = req.body.plano
-  }else if(user.tipoServico == 'impressora'){
-    user.quantPag = req.body.quantPag
+    reserva.save().then(
+       () => {
+         res.json({
+           success: true,
+           result: reserva
+         })
+       },
+       erro => {
+         res.json({
+           success: false,
+           details: erro,
+           result: reserva
+         })
+       })
+
+  }else if(req.body.tipoServico == 'impressora'){
+    var boleto = new Botelo ({
+      tipoServico: req.body.tipoServico,
+      date: req.body.date,
+      custo: req.body.custo,
+      quantPag: req.body.quantPag
+    })
+
+        boleto.save().then(
+           () => {
+             res.json({
+               success: true,
+               result: boleto
+             })
+           },
+           erro => {
+             res.json({
+               success: false,
+               details: erro,
+               result: boleto
+             })
+           })
+
   }else{
     res.json({
       success: false,
@@ -43,20 +83,6 @@ routes.post('/service', (req, res) => {
     })
   }
 
-  service.save().then(
-     () => {
-       res.json({
-         success: true,
-         result: service
-       })s
-     },
-     erro => {
-       res.json({
-         success: false,
-         details: erro,
-         result: service
-       })
-     })
 })
 
 // route para remover um serviço (DEL http://localhost:3000/api/services/:id)

@@ -3,10 +3,10 @@ var mongoose = require('mongoose'),
 		ObjectId = Schema.ObjectId;
 
 var boleto = new Schema ({
-    codBoleto {type: Number},
-    date {type: Date},
-    custo {type: Number},
-    codBarra {type: Number}
+    codBoleto: {type: Number},
+    date: {type: Date},
+    custo: {type: Number},
+    codBarra: {type: Number}
 })
 
 module.exports = mongoose.model('Boleto', boleto);

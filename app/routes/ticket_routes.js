@@ -1,5 +1,5 @@
 var express = require('express')
-var Ticket = require('../models/cliente')
+var Ticket = require('../models/boleto')
 var routes = express.Router()
 
 
@@ -38,7 +38,7 @@ routes.post('/ticket', (req, res) => {
        res.json({
          success: true,
          result: ticket
-       })s
+       })
      },
      erro => {
        res.json({

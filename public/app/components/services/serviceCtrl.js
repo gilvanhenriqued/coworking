@@ -1,14 +1,15 @@
 angular.module('coworking').controller('ServiceCtrl', ServiceCtrl);
 
-function ServiceCtrl($scope, $routeParams, apiSvc) {
+function ServiceCtrl($scope, $routeParams, $rootScope, $location, apiSvc) {
 var self = this;
 
 self.date = "";
 self.custo = "";
 self.plano = "";
+self.tipoReserva = "";
 
   self.registrarReserva = function(){
-    apiSvc.cadastrarReserva("reserva", self.date, self.custo, self.plano)
+    apiSvc.cadastrarReserva("reserva", self.date, self.custo, self.plano, self.tipoReserva)
       .then(function(res){
         if(res.data.success){
           console.log(res.data.result);

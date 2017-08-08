@@ -30,6 +30,13 @@ function ApiService($http) {
     })
   }
 
-
+  this.cadastrarReserva = function(tipoServico, date, custo, plano){
+    return $http.post(API + '/users', {
+      tipoServico = 'reserva',
+      date: date,
+      custo: 30,
+      plano: plano
+    })
+  }
 
 }

@@ -14,7 +14,8 @@ self.cnpj = "";
 self.dataFundacao = "";
 
   self.registrarCliente = function(){
-    apiSvc.cadastrarCliente(self.nome, self.endereco, self.email, self.senha, "cliente", self.cpf, self.genero, self.dataNascimento)
+    apiSvc.cadastrarCliente(self.nome, self.endereco, self.email, self.senha,
+       "cliente", self.cpf, self.genero, self.dataNascimento)
       .then(function(res){
         if(res.data.success){
           console.log(res.data.result);
@@ -30,7 +31,8 @@ self.dataFundacao = "";
   }
 
   self.registrarEmpresa = function(){
-    apiSvc.cadastrarEmpresa(self.nome, self.endereco, self.email, self.senha, "empresa", self.cnpj, self.dataFundacao)
+    apiSvc.cadastrarEmpresa(self.nome, self.endereco, self.email, self.senha,
+       "empresa", self.cnpj, self.dataFundacao)
       .then(function(res){
         if(res.data.success){
           console.log(res.data.result);

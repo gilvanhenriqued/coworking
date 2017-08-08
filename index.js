@@ -13,6 +13,8 @@ app.use(bodyParser.json())
 app.set('superSecret', config.secret); // secret variable
 router.use(require('./app/routes/authentication_routes'))
 router.use(require('./app/routes/user_routes'))
+router.use(require('./app/routes/service_routes'))
+router.use(require('./app/routes/ticket_routes'))
 app.use(express.static(__dirname + '/public'))
 app.use('/scripts', express.static(__dirname + '/node_modules/'));
 app.use('/api', router)

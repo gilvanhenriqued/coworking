@@ -4,7 +4,12 @@ function MainCtrl($scope, $rootScope, $routeParams, $location, apiSvc, authSvc) 
 var self = this;
 
 self.nome = "";
-self.endereco = "";
+self.pais = "";
+self.estado = "";
+self.cidade = "";
+self.bairro = "";
+self.rua = "";
+self.numero = "";
 self.email = "";
 self.senha = "";
 self.cpf = "";
@@ -14,8 +19,8 @@ self.cnpj = "";
 self.dataFundacao = "";
 
   self.registrarCliente = function(){
-    apiSvc.cadastrarCliente(self.nome, self.endereco, self.email, self.senha,
-       "cliente", self.cpf, self.genero, self.dataNascimento)
+    apiSvc.cadastrarCliente(self.nome, self.pais, self.estado, self.cidade, self.bairro, self.rua,
+      self.numero, self.email, self.senha, "cliente", self.cpf, self.genero, self.dataNascimento)
       .then(function(res){
         if(res.data.success){
           console.log(res.data.result);
@@ -31,8 +36,8 @@ self.dataFundacao = "";
   }
 
   self.registrarEmpresa = function(){
-    apiSvc.cadastrarEmpresa(self.nome, self.endereco, self.email, self.senha,
-       "empresa", self.cnpj, self.dataFundacao)
+    apiSvc.cadastrarEmpresa(self.nome, self.pais, self.estado, self.cidade, self.bairro, self.rua,
+       self.numero, self.email, self.senha, "empresa", self.cnpj, self.dataFundacao)
       .then(function(res){
         if(res.data.success){
           console.log(res.data.result);

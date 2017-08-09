@@ -51,4 +51,13 @@ function ApiService($http) {
     })
   }
 
+  this.cadastrarReuniao = function(tipoServico, date, custo){
+    return $http.post(API + '/services', {
+      tipoServico: 'reuniao',
+      date: date,
+      custo: custo,
+      token: res.data.token
+    })
+  }
+
 }

@@ -1,6 +1,7 @@
 var express = require('express')
 var Reserva = require('../models/reserva');
 var Boleto = require('../models/boleto');
+var reuniao = require('../models/reuniao');
 var routes = express.Router()
 
 
@@ -73,6 +74,28 @@ routes.post('/services', (req, res) => {
                success: false,
                details: erro,
                result: boleto
+             })
+           })
+
+  }else if(req.body.tipoServico == 'reuniao'){
+    var reuniao = new Reuniao ({
+      tipoServico: req.body.tipoServico,
+      date: req.body.date,
+      custo: req.body.custo,
+    })
+
+        reuniao.save().then(
+           () => {
+             res.json({
+               success: true,
+               result: reuniao
+             })
+           },
+           erro => {
+             res.json({
+               success: false,
+               details: erro,
+               result: reuniao
              })
            })
 

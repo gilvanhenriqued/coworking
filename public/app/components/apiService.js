@@ -60,4 +60,13 @@ function ApiService($http) {
     })
   }
 
+  this.cadastrarSolicitacaoDeBoleto = function(date, custo, codBarra){
+    return $http.post(API + '/tickets', {
+      date: date,
+      custo: custo,
+      codBarra: codBarra,
+      token: res.data.token
+    })
+  }
+
 }

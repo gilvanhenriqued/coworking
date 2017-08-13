@@ -5,11 +5,16 @@ function ApiService($http, authSvc) {
   var token = authSvc.getToken()
 
 
-  this.cadastrarCliente = function(nome, endereco, email, senha, tipoCliente,
-     cpf, genero, dataNascimento){
+  this.cadastrarCliente = function(nome, pais, estado, cidade, bairro, rua, numero, email, senha,
+    tipoCliente, cpf, genero, dataNascimento){
     return $http.post(API + '/users', {
       nome: nome,
-      endereco: endereco,
+      pais: pais,
+      estado: estado,
+      cidade: cidade,
+      bairro: bairro,
+      rua: rua,
+      numero: numero,
       email: email,
       senha: senha,
       tipoCliente: 'cliente',
@@ -19,11 +24,16 @@ function ApiService($http, authSvc) {
     })
   }
 
-  this.cadastrarEmpresa = function(nome, endereco, email, senha, tipoCliente,
-     cnpj, dataFundacao){
+  this.cadastrarEmpresa = function(nome,  pais, estado, cidade, bairro, rua, numero,
+    email, senha, tipoCliente, cnpj, dataFundacao){
     return $http.post(API + '/users', {
       nome: nome,
-      endereco: endereco,
+      pais: pais,
+      estado: estado,
+      cidade: cidade,
+      bairro: bairro,
+      rua: rua,
+      numero: numero,
       email: email,
       senha: senha,
       tipoCliente: 'empresa',
@@ -39,6 +49,24 @@ function ApiService($http, authSvc) {
       custo: custo,
       plano: plano,
       tipoReserva: tipoReserva,
+    })
+  }
+
+  this.cadastrarReuniao = function(tipoServico, date, custo){
+    return $http.post(API + '/services', {
+      tipoServico: 'reuniao',
+      date: date,
+      custo: custo,
+      token: res.data.token
+    })
+  }
+
+  this.cadastrarSolicitacaoDeBoleto = function(date, custo, codBarra){
+    return $http.post(API + '/tickets', {
+      date: date,
+      custo: custo,
+      codBarra: codBarra,
+      token: res.data.token
     })
   }
 

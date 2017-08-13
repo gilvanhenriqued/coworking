@@ -10,7 +10,7 @@ margin-top: 80px;
           <div class="panel-heading" style="font-size:20px">Reunião</div>
           <div class="panel-body">
           <div class="form-group col-md-5">
-            <label for="name" style="color:black" >Data</label>
+            <label for="name" style="color:black" ng-model = "x.date" >Data</label>
             <input type="date" class="form-control">
           </div>
         </form>
@@ -22,7 +22,8 @@ margin-top: 80px;
         </form>
         <div class= "col-md-offset-7   col-md-3">
           <br></br>
-            <button type="button" class="btn btn-success pull-right" name="button">Solicitar reunião</button>
+            <button type="button" class="btn btn-success pull-right" name="button"
+            ng-click="x.registrarReuniao()">Solicitar reunião</button>
         </div>
       </div>
     </div>

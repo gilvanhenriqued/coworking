@@ -11,7 +11,12 @@ var express = require('express'),
     routes.post('/users', (req, res) => {
       var user = new User ({
         nome: req.body.nome,
-        endereco: req.body.endereco,
+        pais: req.body.pais,
+        estado: req.body.estado,
+        cidade: req.body.cidade,
+        bairro: req.body.bairro,
+        rua: req.body.rua,
+        numero: req.body.numero,
         email: req.body.email,
         senha: req.body.senha,
         tipoCliente: req.body.tipoCliente

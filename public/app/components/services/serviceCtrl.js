@@ -23,4 +23,20 @@ self.tipoReserva = "";
       })
   }
 
+  self.registrarReuniao = function(){
+    apiSvc.cadastrarReserva("reuniao", self.date, self.custo)
+      .then(function(res){
+        if(res.data.success){
+          console.log(res.data.result);
+          console.log('Reunião marcada com sucesso!');
+        }else{
+          console.log(res.data);
+          $scope.data = res.data;
+          $rootScope.$broadcast('evento', {alerta: "erro",
+          message: "Erro! Reveja os dados fornecidos."})
+        }
+      })
+  }
+
+
 }

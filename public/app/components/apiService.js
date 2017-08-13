@@ -1,7 +1,9 @@
 angular.module('coworking').service('apiSvc', ApiService)
 
-function ApiService($http) {
+function ApiService($http, authSvc) {
   var API = "http://localhost:3000/api"
+  var token = authSvc.getToken()
+
 
   this.cadastrarCliente = function(nome, endereco, email, senha, tipoCliente,
      cpf, genero, dataNascimento){
@@ -31,13 +33,12 @@ function ApiService($http) {
   }
 
   this.cadastrarReserva = function(tipoServico, date, custo, plano, tipoReserva){
-    return $http.post(API + '/services', {
+    return $http.post(API + '/services' + '/?token=' + token, {
       tipoServico: 'reserva',
       date: date,
       custo: custo,
       plano: plano,
       tipoReserva: tipoReserva,
-      token: res.data.token
     })
   }
 

@@ -27,13 +27,22 @@ routes.get('/services/:id', (req, res) => {
 
 // route para utilizar um novo serviço (POST http://localhost:3000/api/services)
 routes.post('/services', (req, res) => {
-    console.log(req.body.tipoServico)
+  var valor = req.body.custo;
+  if (req.body.custo == "1 dia - 50,00 R$") {
+    custo = 50.00;
+  }else if(req.body.custo == "1 semana - 200,00 R$"){
+    custo = 200.00;
+  }else if (req.body.custo == "1 mês - 500,00 R$") {
+    custo = 500.00;
+  }else if (req.body.custo == "1 ano - 3000,00 R$") {
+    custo = 3000.00;
+  }
+
   if (req.body.tipoServico == 'reserva'){
-    console.log(req.body.tipoServico)
     var reserva = new Reserva ({
       tipoServico: req.body.tipoServico,
       date: req.body.date,
-      custo: req.body.custo,
+      custo: valor,
       plano: req.body.plano,
       tipoReserva: req.body.tipoReserva
     })

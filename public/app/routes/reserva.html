@@ -10,8 +10,8 @@ margin-top: 80px;
           <div class="panel-heading" style="font-size:20px">Reserva</div>
           <div class="panel-body">
           <div class="form-group col-md-5">
-            <label for="name" style="color:black" ng-model="x.date">Data</label>
-            <input type="date" class="form-control">
+            <label for="name" style="color:black">Data</label>
+            <input type="date" class="form-control" ng-model="x.date">
           </div>
         </form>
         <form>
@@ -22,8 +22,8 @@ margin-top: 80px;
         </form>
         <form>
           <div class="form-group col-md-5">
-            <label for="name" style = "color:black" ng-model="x.tipoReserva">Tipo de reserva</label>
-            <select type = "text" class="form-control">
+            <label for="name" style = "color:black">Tipo de reserva</label>
+            <select type = "text" class="form-control" ng-model="x.tipoReserva">
               <option>Sala</option>
               <option>Auditório</option>
               <option>Laboratório</option>

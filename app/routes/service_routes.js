@@ -68,7 +68,13 @@ routes.post('/services', (req, res) => {
       tipoServico: req.body.tipoServico,
       date: req.body.date,
       custo: req.body.custo,
-      quantPag: req.body.quantPag
+      quantPag: req.body.quantPag,
+      quantCop: req.body.quantCop,
+      horario: req.body.horario,
+      typePapel: req.body.typePapel,
+      alturaPapel: req.body.alturaPapel,
+      larguraPapel: req.body.larguraPapel
+
     })
 
         boleto.save().then(

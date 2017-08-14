@@ -6,7 +6,12 @@ var impressao = new Schema ({
 	  tipoServico {type: String},
     date {type: Date},
     custo {type: Number},
-    quantPag {type: Number, min: 1}
+    quantPag {type: Number},
+		quantCop{type: Number},
+		horario{type: Number},
+		typePapel{type: String},
+		alturaPapel{type: Number},
+		larguraPapel{type: Number}
 })
 
 module.exports = mongoose.model('Impressao', impressao);

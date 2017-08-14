@@ -4,7 +4,6 @@ var mongoose = require('mongoose'),
 
 var impressao = new Schema ({
 	  tipoServico {type: String},
-    codServico {type: Number},
     date {type: Date},
     custo {type: Number},
     quantPag {type: Number, min: 1}

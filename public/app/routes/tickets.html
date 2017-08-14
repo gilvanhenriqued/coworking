@@ -3,33 +3,39 @@ body{
 margin-top: 80px;
 }
 </style>
-<div class="row">
+<div class="row" ng-controller="TicketCtrl as x">
   <div class="col-md-offset-3 col-md-6">
     <form>
       <div class="panel panel-default">
-      <div class="panel-heading" style="font-size:20px">Solicitação de boleto</div>
+      <div class="panel-heading" style="font-size:20px">Pagamentos no Coworking</div>
       <div class="panel-body">
-      <div class="form-group col-md-5">
-        <label for="name" style="color:black" >CPF</label>
-        <input type="text" class="form-control">
+        <div class="row" ng-repeat="n in x.atributos">
+          <div class="col-md-offset-3 col-md-6">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                {{n.tipoServico}}
+              </div>
+              <div class="panel-body">
+                {{n.}}
+              </div>
+              <div class="panel-footer text-right">
+                <div class="row">
+                  <div class="col-md-3"></div>
+                </div>
+                <span class="glyphicon glyphicon-time pull-left"></span>
+                <span class="pull-left" style="padding-left=5px;padding-left:5px;"
+                >{{n.data}}</span>
+                <button class="btn btn-danger btn-sm" type="button" name="button"
+                ng-click="x.curtir()"><span class="glyphicon glyphicon-heart">
+                </span></button>
+                &nbsp;
+                <button class="btn btn-primary btn-sm" type="button" name="button">
+                  <span class="glyphicon glyphicon-comment"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </form>
-    <form>
-      <div class="form-group col-md-5">
-        <label for="name" style = "color:black">Data de solicitação do serviço</label>
-        <input type="time" class="form-control">
-      </div>
-    </form>
-    <form>
-      <div class="form-group col-md-5">
-        <label for="name" style = "color:black">Horário de solicitação do serviço</label>
-        <input type="time" class="form-control">
-      </div>
-    </form>
-    <div class= "col-md-offset-7   col-md-3">
-      <br></br>
-        <button type="button" class="btn btn-success pull-right" name="button" ng-click = "x.registrarSolicitacaoDeBoleto()">Solicitar boleto</button>
-    </div>
     </div>
   </div>
 </div>

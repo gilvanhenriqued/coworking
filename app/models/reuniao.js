@@ -3,10 +3,10 @@ var mongoose = require('mongoose'),
 		ObjectId = Schema.ObjectId;
 
 var reuniao = new Schema ({
-	tipoServico {type: String},
-  codServico {type: Number},
-  date {type: Date},
-  custo {type: Number}
+	tipoServico: {type: String},
+  date: {type: Date},
+	sala: {type: String},
+  custo: {type: Number}
 })
 
 module.exports = mongoose.model('Reuniao', reuniao);

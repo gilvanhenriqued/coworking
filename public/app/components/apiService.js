@@ -61,11 +61,28 @@ function ApiService($http, authSvc) {
     })
   }
 
-  this.cadastrarSolicitacaoDeBoleto = function(date, custo, codBarra){
+  this.cadastrarSolicitacaoDeBoleto = function( date, custo, codBarra){
     return $http.post(API + '/tickets', {
       date: date,
       custo: custo,
       codBarra: codBarra,
+      token: res.data.token
+    })
+  }
+
+  this.guardarDadosDeImpressao = function(tipoServico, date, custo, quantPag, quantCop, horario,
+   typePapel, alturaPapel, larguraPapel){
+    return $http.post(API + '/impressao', {
+      tipoServico: impressao,
+      date: date,
+      custo: custo,
+      codBarra: codBarra,
+      quantPag: quantPag,
+      quantCop: quantCop,
+      horario: horario,
+      typePapel: typePapel,
+      alturaPapel: alturaPapel,
+      larguraPapel: larguraPapel,
       token: res.data.token
     })
   }

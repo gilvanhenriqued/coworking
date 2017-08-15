@@ -7,6 +7,12 @@ self.date = "";
 self.custo = "";
 self.plano = "";
 self.tipoReserva = "";
+self.quantPag = "";
+self.quantCop = "";
+self.horario =  "";
+self.typePapel = "";
+self.alturaPapel = "";
+self.larguraPapel = "";
 
   self.registrarReserva = function(){
     apiSvc.cadastrarReserva("reserva", self.date, self.custo, self.plano, self.tipoReserva)
@@ -38,5 +44,20 @@ self.tipoReserva = "";
       })
   }
 
+  self.registrarImpressao = function(){
+    apiSvc.salvarDadosDeImpressao("impressao", self.date, self.custo, self.quantPag, self.quantCop,
+    self.horario, self.typePapel, self.alturaPapel, self.larguraPapel)
+      .then(function(res){
+        if(res.data.success){
+          console.log(res.data.result);
+          console.log('Dados de impressão salvos com sucesso!');
+        }else{
+          console.log(res.data);
+          $scope.data = res.data;
+          $rootScope.$broadcast('evento', {alerta: "erro",
+          message: "Erro! Reveja os dados fornecidos."})
+        }
+      })
+  }
 
 }

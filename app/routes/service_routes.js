@@ -42,6 +42,7 @@ routes.post('/services', (req, res) => {
   if (req.body.tipoServico == 'reserva'){
     var reserva = new Reserva ({
       tipoServico: req.body.tipoServico,
+      horario: req.body.horario,
       date: req.body.date,
       plano: req.body.plano,
       tipoReserva: req.body.tipoReserva
@@ -66,7 +67,7 @@ routes.post('/services', (req, res) => {
     var boleto = new Botelo ({
       tipoServico: req.body.tipoServico,
       date: req.body.date,
-      custo: req.body.custo,
+      plano: req.body.plano,
       quantPag: req.body.quantPag,
       quantCop: req.body.quantCop,
       horario: req.body.horario,
@@ -94,8 +95,9 @@ routes.post('/services', (req, res) => {
   }else if(req.body.tipoServico == 'reuniao'){
     var reuniao = new Reuniao ({
       tipoServico: req.body.tipoServico,
+      horario: req.body.horario,
       date: req.body.date,
-      custo: req.body.custo,
+      plano: req.body.plano
     })
 
         reuniao.save().then(

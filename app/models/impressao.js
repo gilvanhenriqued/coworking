@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 var impressao = new Schema ({
 	  tipoServico {type: String},
     date {type: Date},
-    custo {type: Number},
+    plano {type: String},
     quantPag {type: Number},
 		quantCop{type: Number},
 		horario{type: Number},

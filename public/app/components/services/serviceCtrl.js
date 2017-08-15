@@ -29,7 +29,7 @@ self.larguraPapel = "";
   }
 
   self.registrarReuniao = function(){
-    apiSvc.cadastrarReserva("reuniao", self.date, self.custo)
+    apiSvc.cadastrarReserva("reuniao", self.horario, self.date, self.plano)
       .then(function(res){
         if(res.data.success){
           console.log(res.data.result);
@@ -44,7 +44,7 @@ self.larguraPapel = "";
   }
 
   self.registrarImpressao = function(){
-    apiSvc.salvarDadosDeImpressao("impressao", self.date, self.custo, self.quantPag, self.quantCop,
+    apiSvc.salvarDadosDeImpressao("impressao", self.date, self.plano, self.quantPag, self.quantCop,
     self.horario, self.typePapel, self.alturaPapel, self.larguraPapel)
       .then(function(res){
         if(res.data.success){

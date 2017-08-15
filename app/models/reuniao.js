@@ -4,9 +4,9 @@ var mongoose = require('mongoose'),
 
 var reuniao = new Schema ({
 	tipoServico: {type: String},
+	horario: {type: Number},
   date: {type: Date},
-	sala: {type: String},
-  custo: {type: Number}
+  plano: {type: String}
 })
 
 module.exports = mongoose.model('Reuniao', reuniao);

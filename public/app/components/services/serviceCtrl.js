@@ -4,7 +4,6 @@ function ServiceCtrl($scope, $routeParams, $rootScope, $location, apiSvc) {
 var self = this;
 
 self.date = "";
-self.custo = "";
 self.plano = "";
 self.tipoReserva = "";
 self.quantPag = "";
@@ -15,7 +14,7 @@ self.alturaPapel = "";
 self.larguraPapel = "";
 
   self.registrarReserva = function(){
-    apiSvc.cadastrarReserva("reserva", self.date, self.custo, self.plano, self.tipoReserva)
+    apiSvc.cadastrarReserva("reserva", self.horario, self.date, self.plano, self.tipoReserva)
       .then(function(res){
         if(res.data.success){
           console.log(res.data.result);

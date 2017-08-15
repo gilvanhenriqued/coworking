@@ -4,8 +4,8 @@ var mongoose = require('mongoose'),
 
 var reserva = new Schema({
 		tipoServico: {type: String},
+		horario: {type: Number},
     date: {type: Date},
-    custo: {type: Number},
     plano: {type: String},
 		tipoReserva: {type: String}
   })

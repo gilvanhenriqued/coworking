@@ -43,7 +43,6 @@ routes.post('/services', (req, res) => {
     var reserva = new Reserva ({
       tipoServico: req.body.tipoServico,
       date: req.body.date,
-      custo: valor,
       plano: req.body.plano,
       tipoReserva: req.body.tipoReserva
     })

@@ -42,11 +42,11 @@ function ApiService($http, authSvc) {
     })
   }
 
-  this.cadastrarReserva = function(tipoServico, date, custo, plano, tipoReserva){
+  this.cadastrarReserva = function(tipoServico, horario, date, plano, tipoReserva){
     return $http.post(API + '/services' + '/?token=' + token, {
       tipoServico: 'reserva',
+      horario: horario,
       date: date,
-      custo: custo,
       plano: plano,
       tipoReserva: tipoReserva,
     })
